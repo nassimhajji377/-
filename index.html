@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06172f">
+  <title>أنقذوا البريمو بجدول الضرب</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand"><span class="brand-mark">✦</span><div><h1>أنقذوا البريمو بجدول الضرب</h1><p>لعبة تعليمية ممتعة • Prima Pôle</p></div><span class="mini-logo">PRIMA<br><b>Pôle</b></span></div>
+      <div class="elapsed" id="elapsed">00:00</div>
+    </header>
+
+    <section class="game-layout" id="gameScreen">
+      <section class="hero-card">
+        <div class="hero-art">
+          <div class="tank-scale" aria-hidden="true">
+            <span>1000</span><span>900</span><span>800</span><span>700</span><span>600</span><span>500</span><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span>
+          </div>
+          <img src="assets/primo-tank-reference.png" alt="البريمو داخل خزان الماء" class="hero-image">
+          <div class="water" id="water"></div>
+          <div class="water-label"><span id="waterValue">0</span> ml / 1000 ml</div>
+        </div>
+        <aside class="stats">
+          <div class="stat"><small>الوقت المتبقي</small><strong id="timeLeft">02:00</strong></div>
+          <div class="stat"><small>الإجابات الصحيحة</small><strong><span id="correct">0</span>/10</strong></div>
+          <div class="stat"><small>المحاولات</small><strong id="attempts">0</strong></div>
+          <div class="stat"><small>مستوى الماء</small><strong><span id="waterStat">0</span> ml</strong></div>
+        </aside>
+      </section>
+
+      <section class="play-card">
+        <div class="equation">
+          <div class="answer-box" id="answerBox" aria-label="الإجابة">—</div>
+          <span class="equals">=</span>
+          <span class="number a" id="numA">5</span>
+          <span class="multiply">×</span>
+          <span class="number b" id="numB">2</span>
+        </div>
+        <p class="hint" id="hint">اكتب حاصل ضرب العددين باستعمال لوحة الأرقام</p>
+        <div class="keypad" id="keypad">
+          <button data-key="3">3</button><button data-key="2">2</button><button data-key="1">1</button>
+          <button data-key="6">6</button><button data-key="5">5</button><button data-key="4">4</button>
+          <button data-key="9">9</button><button data-key="8">8</button><button data-key="7">7</button>
+          <button class="home" data-action="reset">⌂ <small>إعادة</small></button><button data-key="0">0</button><button class="erase" data-action="erase">⌫</button>
+        </div>
+        <button class="check-answer" id="checkBtn">تحقق من الإجابة ✓</button><button class="start" id="startBtn">▶ ابدأ التحدي</button>
+        <p class="fineprint">أكمل 10 إجابات صحيحة خلال دقيقتين لإنقاذ البريمو!</p>
+      </section>
+    </section>
+
+    <section class="certificate hidden" id="certificate">
+      <div class="celebrate">🎉</div>
+      <h2>مبروك! أكملت التحدي</h2>
+      <p>اكتب اسمك ولقبك باش نجهزولك شهادة تميزك بامتيازاتي.</p>
+      <div class="name-fields">
+        <label>الاسم<input id="firstName" placeholder="الاسم"></label>
+        <label>اللقب<input id="lastName" placeholder="اللقب"></label>
+      </div>
+      <div class="cert-preview" id="certPreview">
+        <div class="cert-ribbon">شهادة نجاح</div><div class="cert-title">أنقذت البريمو! 🏆</div>
+        <p>تُمنح هذه الشهادة إلى</p><strong id="certName">اسم اللاعب</strong>
+        <p>لإتمامه تحدي جدول الضرب بنجاح</p><b>10 / 10 إجابات صحيحة</b>
+        <small>Prima Pôle • فكرة وإنجاز سعاد دقاز</small>
+      </div>
+      <div class="cert-actions"><button id="downloadBtn">تنزيل الشهادة</button><button id="shareBtn">مشاركة الشهادة</button></div>
+      <button class="again" id="againBtn">العب من جديد</button>
+      <p class="muted">يمكنك تنزيل صورة الشهادة أو مشاركتها بعد إدخال اسمك ولقبك.</p>
+    </section>
+    <section class="modal hidden" id="resultModal"><div class="modal-card"><div class="celebrate" id="resultEmoji">💧</div><h2 id="resultTitle">انتهى الوقت!</h2><p id="resultText"></p><button id="modalAgain">حاول مرة أخرى</button></div></section>
+    <footer>لعبة تعليمية لتدريب جدول الضرب</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
